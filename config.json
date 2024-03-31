@@ -1,0 +1,429 @@
+{
+  "configuration": {
+    "rpc": {
+      "defaultDriver": "WebWorkerRpcDriver",
+      "drivers": {
+        "MainThreadRpcDriver": {},
+        "WebWorkerRpcDriver": {}
+      }
+    },
+    "theme": {
+      "palette": {
+        "primary": {
+          "main": "#222831"
+        },
+        "secondary": {
+          "main": "#393E46"
+        },
+        "tertiary": {
+          "main": "#00ADB5"
+        },
+        "quaternary": {
+          "main": "#A2C4C9"
+        }
+      }
+    },
+    "logoPath": {
+      "locationType": "UriLocation",
+      "uri": "data/Logo_SB.svg"
+    }
+  },
+  "plugins": [
+    {
+      "name": "NucContent",
+      "umdLoc": {
+        "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
+      }
+    },
+    {
+      "name": "ReplaceSpaces",
+      "umdLoc": {
+        "uri": "plugins/ReplaceSpaces.js"
+      }
+    },
+    {
+      "name": "ReplaceUnderslashCapitalize",
+      "umdLoc": {
+        "uri": "plugins/ReplaceUnderslashCapitalize.js"
+      }
+    },
+    {
+      "name": "Italicize",
+      "umdLoc": {
+        "uri": "plugins/Italicize.js"
+      }
+    },
+    {
+      "name": "QVScore",
+      "umdLoc": {
+        "uri": "plugins/QVScore.js"
+      }
+    },
+    {
+      "name": "sgRNATarget",
+      "umdLoc": {
+        "uri": "plugins/sgRNATarget.js"
+      }
+    },
+    {
+      "name": "Capital",
+      "umdLoc": {
+        "uri": "plugins/Capital.js"
+      }
+    },
+    {
+      "name": "Inference",
+      "umdLoc": {
+        "uri": "plugins/Inference.js"
+      }
+    }
+  ],
+  "assemblies": [
+    {
+      "name": "NV1",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "NV1-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "IndexedFastaAdapter",
+          "fastaLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/NV1.fna"
+          },
+          "faiLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/NV1.fna.fai"
+          },
+          "metadataLocation": {
+            "locationType": "UriLocation",
+            "uri": "/path/to/fa.metadata.yaml"
+          }
+        },
+        "displays": [
+          {
+            "type": "LinearReferenceSequenceDisplay",
+            "displayId": "NV1-ReferenceSequenceTrack-LinearReferenceSequenceDisplay"
+          },
+          {
+            "type": "LinearGCContentDisplay",
+            "displayId": "NV1-ReferenceSequenceTrack-LinearGCContentDisplay"
+          }
+        ]
+      },
+      "displayName": "NV1"
+    }
+  ],
+  "tracks": [
+    {
+      "type": "FeatureTrack",
+      "trackId": "NV1_sorted.gff",
+      "name": "Coding features",
+      "assemblyNames": [
+        "NV1"
+      ],
+      "category": [
+        "Annotation"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/NV1_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/NV1_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "NV1_sorted.gff-index",
+          "ixFilePath": {
+            "uri": "trix/NV1_sorted.gff.ix",
+            "locationType": "UriLocation"
+          },
+          "ixxFilePath": {
+            "uri": "trix/NV1_sorted.gff.ixx",
+            "locationType": "UriLocation"
+          },
+          "metaFilePath": {
+            "uri": "trix/NV1_sorted.gff_meta.json",
+            "locationType": "UriLocation"
+          },
+          "assemblyNames": [
+            "NV1"
+          ]
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "NV1_sorted.gff-LinearBasicDisplay",
+          "height": 200,
+          "mouseover": "jexl:italics(get(feature,'name'))",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "jexl:get(feature,'gbkey')=='tRNA'?'rgb(45, 41, 138)':get(feature,'gbkey')=='rRNA'?'rgb(136, 184, 77)':get(feature,'gbkey')=='tmRNA'?'rgb(45, 41, 138)':get(feature,'gbkey')=='ncRNA'?'darkgrey':get(feature,'gbkey')=='regulatory'?'rgb(37, 150, 190)':get(feature,'gbkey')=='repeat_region'?'rgb(143, 69, 158)':get(feature,'gbkey')=='misc_feature'?'rgb(37, 150, 190)':get(feature,'gbkey')=='misc_binding'?'rgb(37, 150, 190)':'rgb(218, 165, 32)'",
+            "labels": {
+              "name": "jexl:get(feature,'name') || replaceuc(get(feature,'note')) || replaceuc(get(feature,'gbkey'))",
+              "description": ""
+            }
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "NV1_sorted.gff-LinearArcDisplay",
+          "height": 200
+        }
+      ],
+      "formatDetails": {
+        "feature": "jexl:{id:undefined, gene_biotype:undefined, Gene_biotype:feature.gene_biotype != null ? capital(replaceuc(feature.gene_biotype)): null, Source: feature.source, source:undefined, locus_tag:undefined, Locus_tag:feature.locus_tag, Spy_locus_tag:feature.spy_locus_tag, spy_locus_tag:undefined, phase:undefined, type:replaceuc(feature.type), gene:undefined, Gene:italics(feature.gene), inference:undefined, Inference:feature.inference != null ? capital(inference(feature.inference)) : null, Note:feature.note != null ? replaceuc(feature.note): null, note:undefined}",
+        "subfeatures": "jexl:{uniprot:undefined, ontology_term:undefined, gene:undefined, Gene:italics(feature.gene), id:undefined, source:undefined, Source: feature.source, locus_tag:undefined, Protein_ID:feature.protein_id, protein_id:undefined, Product:capital(feature.product), product:undefined, phase:undefined, parent:undefined, id:undefined, aa_sequence:undefined,PaperBLAST: feature.aa_sequence != null ? '<a href=https://papers.genomics.lbl.gov/cgi-bin/litSearch.cgi?query='+feature.aa_sequence+'>'+'PaperBLAST'+'</a>': null, transl_table:undefined, NCBI: feature.protein_id != null ? '<a href=https://www.ncbi.nlm.nih.gov/protein/'+feature.protein_id+'>'+'Protein Entry'+'</a>' : null, dbxref:undefined, inference:undefined, Inference:capital(inference(feature.inference)), GO_Component:capital(feature.go_component), go_component:undefined, GO_Function:capital(feature.go_function), go_function:undefined, GO_Process:capital(feature.go_process), go_process:undefined, Gene_ontology: feature.ontology_term != null ? '<a href=https://www.ebi.ac.uk/QuickGO/search/'+replacespaces(feature.ontology_term)+'>'+'QuickGO Database Entries'+'</a>' : null, UniProt:feature.uniprot != null ? '<a href=https://www.uniprot.org/uniprotkb/'+feature.uniprot+'>'+feature.uniprot+'</a>' : null, gbkey:undefined, }"
+      }
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "sgRNA_sorted.gff",
+      "name": "sgRNAs",
+      "assemblyNames": [
+        "NV1"
+      ],
+      "category": [
+        "CRISPRi"
+      ],
+      "adapter": {
+        "type": "Gff3TabixAdapter",
+        "gffGzLocation": {
+          "locationType": "UriLocation",
+          "uri": "data/sgRNA_sorted.gff.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "uri": "data/sgRNA_sorted.gff.gz.tbi"
+          }
+        }
+      },
+      "textSearching": {
+        "indexingAttributes": [
+          "Name",
+          "ID",
+          "name"
+        ],
+        "textSearchAdapter": {
+          "type": "TrixTextSearchAdapter",
+          "textSearchAdapterId": "sgRNA_sorted.gff-index",
+          "ixFilePath": {
+            "uri": "trix/sgRNA_sorted.gff.ix",
+            "locationType": "UriLocation"
+          },
+          "ixxFilePath": {
+            "uri": "trix/sgRNA_sorted.gff.ixx",
+            "locationType": "UriLocation"
+          },
+          "metaFilePath": {
+            "uri": "trix/sgRNA_sorted.gff_meta.json",
+            "locationType": "UriLocation"
+          },
+          "assemblyNames": [
+            "NV1"
+          ]
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearBasicDisplay",
+          "displayId": "sgRNA_sorted.gff-LinearBasicDisplay",
+          "mouseover": "jexl:sgrnatarget(get(feature,'target_gene_name'))",
+          "renderer": {
+            "type": "SvgFeatureRenderer",
+            "color1": "rgb(102, 194, 165)"
+          }
+        },
+        {
+          "type": "LinearArcDisplay",
+          "displayId": "sgRNA_sorted.gff-LinearArcDisplay"
+        }
+      ],
+      "formatDetails": {
+        "feature": "jexl:{Source:'V. de Bakker', source:undefined, id:undefined, phase:undefined, Target_locus_tag:feature.target_locus_tag, target_locus_tag:undefined, Target_gene_name:italics(feature.target_gene_name), target_gene_name:undefined}"
+      }
+    },
+    {
+      "type": "NucContentTrack",
+      "trackId": "gc_content_dynamic",
+      "name": "GC content",
+      "assemblyNames": [
+        "NV1"
+      ],
+      "category": [
+        "GC content"
+      ],
+      "adapter": {
+        "type": "NucContentAdapter",
+        "sequenceAdapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/NV1.fna.gz"
+          },
+          "faiLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/NV1.fna.gz.fai"
+          },
+          "metadataLocation": {
+            "locationType": "UriLocation",
+            "uri": "/path/to/fa.metadata.yaml"
+          },
+          "gziLocation": {
+            "locationType": "UriLocation",
+            "uri": "data/NV1.fna.gz.gzi"
+          }
+        },
+        "windowSize": 200,
+        "windowOverlap": 10
+      },
+      "displays": [
+        {
+          "type": "NucContentDisplay",
+          "displayId": "gc_content_dynamic-NucContentDisplay",
+          "minScore": 0,
+          "maxScore": 0.8
+        }
+      ]
+    }
+  ],
+  "internetAccounts": [],
+  "aggregateTextSearchAdapters": [],
+  "connections": [],
+  "defaultSession": {
+    "drawerPosition": "left",
+    "drawerWidth": 384,
+    "widgets": {
+      "GridBookmark": {
+        "id": "GridBookmark",
+        "type": "GridBookmarkWidget"
+      },
+      "hierarchicalTrackSelector": {
+        "id": "hierarchicalTrackSelector",
+        "type": "HierarchicalTrackSelectorWidget",
+        "initialized": true,
+        "collapsed": {},
+        "view": "1SHhqp4_YLKIvcY_K-ig3",
+        "faceted": {
+          "filterText": "",
+          "showSparse": false,
+          "showFilters": true,
+          "showOptions": false,
+          "panelWidth": 400
+        }
+      }
+    },
+    "activeWidgets": {
+      "hierarchicalTrackSelector": "hierarchicalTrackSelector"
+    },
+    "minimized": false,
+    "id": "u1YyMXCY82Q-tANvWQi-U",
+    "name": "Streptococcus pyogenes NV1",
+    "margin": 0,
+    "views": [
+      {
+        "id": "1SHhqp4_YLKIvcY_K-ig3",
+        "minimized": false,
+        "type": "LinearGenomeView",
+        "offsetPx": 0,
+        "bpPerPx": 1.391465677179963,
+        "displayedRegions": [
+          {
+            "refName": "CP140117.2",
+            "start": 0,
+            "end": 1835839,
+            "reversed": false,
+            "assemblyName": "NV1"
+          }
+        ],
+        "tracks": [
+          {
+            "id": "JFn83NCzcah7aUib86S-c",
+            "type": "ReferenceSequenceTrack",
+            "configuration": "NV1-ReferenceSequenceTrack",
+            "minimized": false,
+            "displays": [
+              {
+                "id": "GGzHM1UdP-vzdh_1wetHP",
+                "type": "LinearReferenceSequenceDisplay",
+                "heightPreConfig": 50,
+                "configuration": "NV1-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
+                "showForward": true,
+                "showReverse": true,
+                "showTranslation": true
+              }
+            ]
+          },
+          {
+            "id": "ckdk7q9v9w5iUwKzCGfH9",
+            "type": "FeatureTrack",
+            "configuration": "NV1_sorted.gff",
+            "minimized": false,
+            "displays": [
+              {
+                "id": "4cujO83ufG7eSJPyQcnw5",
+                "type": "LinearBasicDisplay",
+                "configuration": "NV1_sorted.gff-LinearBasicDisplay"
+              }
+            ]
+          },
+          {
+            "id": "P9JW14vX1iu2YEb-SqK1n",
+            "type": "FeatureTrack",
+            "configuration": "sgRNA_sorted.gff",
+            "minimized": false,
+            "displays": [
+              {
+                "id": "5X0Ol2Nx5T7zbuXnhxTcs",
+                "type": "LinearBasicDisplay",
+                "configuration": "sgRNA_sorted.gff-LinearBasicDisplay"
+              }
+            ]
+          },
+          {
+            "id": "rCjb19XXep5Cqa9xWsfh0",
+            "type": "NucContentTrack",
+            "configuration": "gc_content_dynamic",
+            "minimized": false,
+            "displays": [
+              {
+                "id": "kVxScWF9NNVrpl-wmYtJh",
+                "type": "NucContentDisplay",
+                "configuration": "gc_content_dynamic-NucContentDisplay",
+                "selectedRendering": "",
+                "resolution": 1,
+                "constraints": {}
+              }
+            ]
+          }
+        ],
+        "hideHeader": false,
+        "hideHeaderOverview": false,
+        "hideNoTracksActive": false,
+        "trackSelectorType": "hierarchical",
+        "showCenterLine": false,
+        "showCytobandsSetting": true,
+        "trackLabels": "",
+        "showGridlines": true,
+        "showBookmarkHighlights": true,
+        "showBookmarkLabels": true
+      }
+    ],
+    "sessionTracks": [],
+    "sessionAssemblies": [],
+    "temporaryAssemblies": [],
+    "connectionInstances": [],
+    "sessionConnections": [],
+    "focusedViewId": "1SHhqp4_YLKIvcY_K-ig3",
+    "sessionPlugins": []
+  }
+}
