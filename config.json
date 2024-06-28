@@ -88,11 +88,11 @@
           "type": "IndexedFastaAdapter",
           "fastaLocation": {
             "locationType": "UriLocation",
-            "uri": "data/NV1.fna"
+            "uri": "data/NV1/NV1.fna"
           },
           "faiLocation": {
             "locationType": "UriLocation",
-            "uri": "data/NV1.fna.fai"
+            "uri": "data/NV1/NV1.fna.fai"
           },
           "metadataLocation": {
             "locationType": "UriLocation",
@@ -128,12 +128,12 @@
         "type": "Gff3TabixAdapter",
         "gffGzLocation": {
           "locationType": "UriLocation",
-          "uri": "data/NV1_sorted.gff.gz"
+          "uri": "data/NV1/NV1_sorted.gff.gz"
         },
         "index": {
           "location": {
             "locationType": "UriLocation",
-            "uri": "data/NV1_sorted.gff.gz.tbi"
+            "uri": "data/NV1/NV1_sorted.gff.gz.tbi"
           }
         }
       },
@@ -198,12 +198,12 @@
         "type": "Gff3TabixAdapter",
         "gffGzLocation": {
           "locationType": "UriLocation",
-          "uri": "data/sgRNA_sorted.gff.gz"
+          "uri": "data/NV1/sgRNA_sorted.gff.gz"
         },
         "index": {
           "location": {
             "locationType": "UriLocation",
-            "uri": "data/sgRNA_sorted.gff.gz.tbi"
+            "uri": "data/NV1/sgRNA_sorted.gff.gz.tbi"
           }
         }
       },
@@ -268,11 +268,11 @@
           "type": "BgzipFastaAdapter",
           "fastaLocation": {
             "locationType": "UriLocation",
-            "uri": "data/NV1.fna.gz"
+            "uri": "data/NV1//NV1.fna.gz"
           },
           "faiLocation": {
             "locationType": "UriLocation",
-            "uri": "data/NV1.fna.gz.fai"
+            "uri": "data/NV1/NV1.fna.gz.fai"
           },
           "metadataLocation": {
             "locationType": "UriLocation",
@@ -280,7 +280,7 @@
           },
           "gziLocation": {
             "locationType": "UriLocation",
-            "uri": "data/NV1.fna.gz.gzi"
+            "uri": "data/NV1/NV1.fna.gz.gzi"
           }
         },
         "windowSize": 200,
@@ -327,7 +327,7 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.0.5)",
+    "name": "SpyBrowse (v1.0.6)",
     "margin": 0,
     "views": [
       {
