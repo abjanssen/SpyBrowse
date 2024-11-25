@@ -249,7 +249,7 @@
         }
       ],
       "formatDetails": {
-        "feature": "jexl:{Source:'V. de Bakker', source:undefined, id:undefined, phase:undefined, Target_locus_tag:feature.target_locus_tag, target_locus_tag:undefined, Target_gene_name:italics(feature.target_gene_name), target_gene_name:undefined}"
+        "feature": "jexl:{Source:'V. de Bakker', score:undefined, source:undefined, id:undefined, phase:undefined, Target_locus_tag:feature.target_locus_tag, target_locus_tag:undefined, Target_gene_name:italics(feature.target_gene_name), target_gene_name:undefined}"
       }
     },
     {
@@ -325,7 +325,7 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.0.15)",
+    "name": "SpyBrowse (v1.0.16)",
     "margin": 0,
     "views": [
       {
