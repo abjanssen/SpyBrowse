@@ -2,6 +2,9 @@
 ;(function () {
   class MyPlugin {
     install() {}
+          name = 'DataFormattingPlugin'
+          version = 'sgRNATargetFormatting'
+          
     configure(pluginManager) {
       pluginManager.jexl.addFunction('sgrnatarget', feature => {
         if (typeof feature !== 'string') return feature;
