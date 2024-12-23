@@ -30,6 +30,12 @@
   },
   "plugins": [
     {
+      "name": "ReferenceContactsWidget",
+      "esmLoc": {
+        "uri": "plugins/ReferenceContactsWidget.js"
+      }
+    },    
+    {
       "name": "NucContent",
       "umdLoc": {
         "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
@@ -325,7 +331,7 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.0.23)",
+    "name": "SpyBrowse (v1.0.24)",
     "margin": 0,
     "views": [
       {
