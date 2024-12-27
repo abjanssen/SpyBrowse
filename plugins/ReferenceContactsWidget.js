@@ -52,7 +52,7 @@ export default class MyPlugin {
       'div', 
       null, 
       React.createElement('h1', null, 'Data Availability'),
-      React.createElement('p', null, 'Data within PneumoBrowse is available from the NCBI.'),
+      React.createElement('p', null, 'Data within SpyBrowse are available from the NCBI.'),
       React.createElement('p', null, 'PacBio genome sequences, assemblies, and sequencing reads are available at NCBI under BioProject accession number accession code ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1050251"}, "PRJNA1050251"), '.'))
       return React.createElement('div', null, [availabilitycontent])
     }
@@ -62,7 +62,7 @@ export default class MyPlugin {
       // adding a widget to the plugin
       return new WidgetType({
         name: 'CiteWidget',
-        heading: 'Cite PneumoBrowse',
+        heading: 'Cite SpyBrowse',
         configSchema: ConfigurationSchema('CiteWidget', {}),
         stateModel: types.model('CiteWidget', {
           id: ElementId,
@@ -106,7 +106,7 @@ export default class MyPlugin {
     if (pluginManager.rootModel) {
       pluginManager.rootModel.insertMenu('Reference and contact', 10)
       pluginManager.rootModel.appendToMenu('Reference and contact', {
-        label: 'Citing PneumoBrowse',
+        label: 'Citing SpyBrowse',
         onClick: session => {
           // upon clicking on this menu item, we need to add and show our new widget
           const widget = session.addWidget('CiteWidget', 'citeWidget', {
