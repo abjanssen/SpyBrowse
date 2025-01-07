@@ -26,10 +26,10 @@ export default class MyPlugin {
       'div', 
       null, 
       React.createElement('h1', null, 'Citing SpyBrowse'),
-      React.createElement('p', null, 'An efficient in vivo-inducible CRISPR interference system for group A Streptococcus genetic analysis and pathogenesis studies'),
+      React.createElement('p', null, 'An efficient ', React.createElement('i', null, 'in vivo'), '-inducible CRISPR interference system for group A Streptococcus genetic analysis and pathogenesis studies'),
       React.createElement('p', null, 'Elisabet Bjånes, Alexandra Stream, Axel B. Janssen, Paddy S. Gibson, Afonso M. Bravo, Samira Dahesh, Jonathon L. Baker, Andrew Varble, Victor Nizet, Jan-Willem Veening'),
       React.createElement('p', null, 'mBio, 2024, e00840-24'),
-      React.createElement("span", null, React.createElement("a", {href: "https://doi.org/10.1128/mbio.00840-24"}, "https://doi.org/10.1128/mbio.00840-24" )))
+      React.createElement("span", null, React.createElement("a", {href: "https://doi.org/10.1128/mbio.00840-24", target: "_blank", rel: "noopener noreferrer"}, "https://doi.org/10.1128/mbio.00840-24" )))
       return React.createElement('div', null, [citecontent])
     }
     const ContactWidget = props => {
@@ -41,8 +41,8 @@ export default class MyPlugin {
       null, 
       React.createElement('h1', null, 'Contact and feedback'),
       React.createElement('p', null, 'Thank you for visiting! This genome browser was developed by the Veening lab at the University of Lausanne, Switzerland. If you have any questions or feedback, please contact us via email.'),
-      React.createElement('p', null, 'Email: ', React.createElement("a", {href: "mailto:Veening.lab@gmail.com"}, "Veening.lab@gmail.com" )),
-      React.createElement('p', null, 'For more genome browsers developed by the Veening lab, please visit: ', React.createElement("a", {href: "https://www.veeninglab.com/resources"}, "https://www.veeninglab.com/resources" ), "."))
+      React.createElement('p', null, 'Email: ', React.createElement("a", {href: "mailto:Veening.lab@gmail.com?subject=SpyBrowse"}, "Veening.lab@gmail.com" )),
+      React.createElement('p', null, 'For more genome browsers developed by the Veening lab, please visit: ', React.createElement("a", {href: "https://www.veeninglab.com/resources", target: "_blank", rel: "noopener noreferrer"}, "https://www.veeninglab.com/resources" ), "."))
       return React.createElement('div', null, [contactcontent])
     }
     const DataaAvailabilityWidget = props => {
@@ -54,7 +54,7 @@ export default class MyPlugin {
       null, 
       React.createElement('h1', null, 'Data Availability'),
       React.createElement('p', null, 'Data within SpyBrowse are available from the NCBI.'),
-      React.createElement('p', null, 'PacBio genome sequences, assemblies, and sequencing reads are available at NCBI under BioProject accession number accession code ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1050251"}, "PRJNA1050251"), '.'))
+      React.createElement('p', null, 'PacBio genome sequences, assemblies, and sequencing reads are available at NCBI under BioProject accession number accession code ', React.createElement("a", {href: "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1050251", target: "_blank", rel: "noopener noreferrer"}, "PRJNA1050251"), '.'))
       return React.createElement('div', null, [availabilitycontent])
     }
 
