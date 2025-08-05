@@ -9,7 +9,7 @@ We will come back to you as soon as possible.
 
 Have you been using our genome browser, please cite us in your work, it would help us:
 ```
-An efficient in vivo-inducible CRISPR interference system for group A _Streptococcus_ genetic analysis and pathogenesis studies.
+An efficient in vivo-inducible CRISPR interference system for group A Streptococcus genetic analysis and pathogenesis studies.
 Elisabet Bjånes*, Alexandra Stream*, Axel B Janssen, Paddy S Gibson, Afonso M Bravo, Samira Dahesh, Jonathon L Baker, Andrew Varble, Victor Nizet, Jan-Willem Veening.
 mBio, 2024, 15 (8), e00840-24
 https://doi.org/10.1128/mbio.00840-24
