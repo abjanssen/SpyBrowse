@@ -26,7 +26,7 @@ export default class MyPlugin {
       'div', 
       null, 
       React.createElement('h1', null, 'Citing SpyBrowse'),
-      React.createElement('p', null, 'An efficient ', React.createElement('i', null, 'in vivo'), '-inducible CRISPR interference system for group A Streptococcus genetic analysis and pathogenesis studies'),
+      React.createElement('p', null, 'An efficient ', React.createElement('i', null, 'in vivo'), '-inducible CRISPR interference system for group A ', React.createElement('i', null, 'Streptococcus'), 'genetic analysis and pathogenesis studies'),
       React.createElement('p', null, 'Elisabet Bjånes, Alexandra Stream, Axel B. Janssen, Paddy S. Gibson, Afonso M. Bravo, Samira Dahesh, Jonathon L. Baker, Andrew Varble, Victor Nizet, Jan-Willem Veening'),
       React.createElement('p', null, 'mBio, 2024, e00840-24'),
       React.createElement("span", null, React.createElement("a", {href: "https://doi.org/10.1128/mbio.00840-24", target: "_blank", rel: "noopener noreferrer"}, "https://doi.org/10.1128/mbio.00840-24" )))
