@@ -29,73 +29,19 @@
     }
   },
   "plugins": [
-    {
-      "name": "ReferenceContactsWidget",
-      "esmLoc": {
-        "uri": "plugins/ReferenceContactsWidget.js"
-      }
-    },    
-            {
-              "name": "MsaView",
-              "umdLoc": {
-                "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js"
-              }
-            },
-    {
-      "name": "Protein3d",
-      "umdLoc": {
-        "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js"
-      }
-    },
-    {
-      "name": "NucContent",
-      "umdLoc": {
-        "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js"
-      }
-    },
-    {
-      "name": "ReplaceSpaces",
-      "umdLoc": {
-        "uri": "plugins/ReplaceSpaces.js"
-      }
-    },
-    {
-      "name": "ReplaceUnderslashCapitalize",
-      "umdLoc": {
-        "uri": "plugins/ReplaceUnderslashCapitalize.js"
-      }
-    },
-    {
-      "name": "Italicize",
-      "umdLoc": {
-        "uri": "plugins/Italicize.js"
-      }
-    },
-    {
-      "name": "QVScore",
-      "umdLoc": {
-        "uri": "plugins/QVScore.js"
-      }
-    },
-    {
-      "name": "sgRNATarget",
-      "umdLoc": {
-        "uri": "plugins/sgRNATarget.js"
-      }
-    },
-    {
-      "name": "Capital",
-      "umdLoc": {
-        "uri": "plugins/Capital.js"
-      }
-    },
-    {
-      "name": "Inference",
-      "umdLoc": {
-        "uri": "plugins/Inference.js"
-      }
-    }
-  ],
+  { "name": "MsaView", "umdLoc": { "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js" } },
+  { "name": "NucContent", "umdLoc": { "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js" } },
+  { "name": "Protein3d", "umdLoc": { "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js" } },
+  { "name": "ReferenceContactsWidget", "esmLoc": { "uri": "plugins/ReferenceContactsWidget.js" } },
+  { "name": "Inference", "umdLoc": { "uri": "plugins/Inference.js" } },
+  { "name": "QVScore", "umdLoc": { "uri": "plugins/QVScore.js" } },
+  { "name": "sgRNATarget", "umdLoc": { "uri": "plugins/sgRNATarget.js" } },
+  { "name": "Capital", "umdLoc": { "uri": "plugins/Capital.js" } },
+  { "name": "Italicize", "umdLoc": { "uri": "plugins/Italicize.js" } },
+  { "name": "ReplaceSpaces", "umdLoc": { "uri": "plugins/ReplaceSpaces.js" } },
+  { "name": "ReplaceUnderslashCapitalize", "umdLoc": { "uri": "plugins/ReplaceUnderslashCapitalize.js" } }
+    ]
+,
   "assemblies": [
     {
       "name": "NV1",
@@ -343,7 +289,7 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.1.13)",
+    "name": "SpyBrowse (v1.1.14)",
     "margin": 0,
     "views": [
       {
