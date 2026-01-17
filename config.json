@@ -30,7 +30,6 @@
   },
   "plugins": [
   { "name": "MsaView", "umdLoc": { "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js" } },
-  { "name": "NucContent", "umdLoc": { "uri": "plugins/jbrowsepluginnuccontent.umd.production.min.js" } },
   { "name": "Protein3d", "umdLoc": { "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js" } },
   { "name": "ReferenceContactsWidget", "esmLoc": { "uri": "plugins/ReferenceContactsWidget.js" } },
   { "name": "Inference", "umdLoc": { "uri": "plugins/Inference.js" } },
@@ -217,45 +216,35 @@
       }
     },
     {
-      "type": "NucContentTrack",
-      "trackId": "gc_content_dynamic",
+      "type": "GCContentTrack",
+      "trackId": "gc_content",
       "name": "GC content",
       "assemblyNames": [
         "NV1"
       ],
       "category": [
-        "GC content"
+        "Genome characteristics",
+        "Miscellaneous"
       ],
       "adapter": {
-        "type": "NucContentAdapter",
-        "sequenceAdapter": {
-          "type": "BgzipFastaAdapter",
-          "fastaLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/NV1//NV1.fna.gz"
-          },
-          "faiLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/NV1/NV1.fna.gz.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
-          },
-          "gziLocation": {
-            "locationType": "UriLocation",
-            "uri": "data/NV1/NV1.fna.gz.gzi"
-          }
+        "type": "IndexedFastaAdapter",
+        "fastaLocation": {
+          "locationType": "UriLocation",
+          "uri": "./data/NV1/NV1.fna"
         },
-        "windowSize": 200,
-        "windowOverlap": 10
+        "faiLocation": {
+          "locationType": "UriLocation",
+          "uri": "./data/NV1/NV1.fna.fai"
+        },
+        "metadataLocation": {
+          "locationType": "UriLocation",
+          "uri": "/path/to/fa.metadata.yaml"
+        }
       },
       "displays": [
         {
-          "type": "NucContentDisplay",
-          "displayId": "gc_content_dynamic-NucContentDisplay",
-          "minScore": 0,
-          "maxScore": 0.8
+          "type": "LinearGCContentTrackDisplay",
+          "displayId": "gc_content_NV1-LinearGCContentTrackDisplay"
         }
       ]
     }
@@ -352,19 +341,25 @@
             ]
           },
           {
-            "id": "rCjb19XXep5Cqa9xWsfh0",
-            "type": "NucContentTrack",
-            "configuration": "gc_content_dynamic",
+            "id": "VcP339XrwELEbzw14Y9f0",
+            "type": "GCContentTrack",
+            "configuration": "gc_content",
             "minimized": false,
+            "pinned": false,
             "displays": [
               {
-                "id": "kVxScWF9NNVrpl-wmYtJh",
-                "type": "NucContentDisplay",
-                "configuration": "gc_content_dynamic-NucContentDisplay",
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_NV1-LinearGCContentTrackDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
                 "color": "rgb(32, 25, 134)",
-                "constraints": {}
+                "constraints": {
+                  "max": 1,
+                  "min": 0
+                },
+                "windowSize": 200,
+                "windowDelta": 10
               }
             ]
           }
