@@ -241,12 +241,17 @@
           "uri": "/path/to/fa.metadata.yaml"
         }
       },
-      "displays": [
-        {
-          "type": "LinearGCContentTrackDisplay",
-          "displayId": "gc_content_NV1-LinearGCContentTrackDisplay"
-        }
-      ]
+            "displays": [
+              {
+                "id": "j4N3EAiK2tC1KfjZwIiX-",
+                "type": "LinearGCContentTrackDisplay",
+                "configuration": "gc_content_NV1-LinearGCContentTrackDisplay",
+                "selectedRendering": "",
+                "resolution": 1,
+                "windowSize": 200,
+                "windowDelta": 20
+              }
+            ]
     }
   ],
   "internetAccounts": [],
@@ -278,7 +283,7 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.1.16)",
+    "name": "SpyBrowse (v1.1.17)",
     "margin": 0,
     "views": [
       {
@@ -359,7 +364,7 @@
                   "min": 0
                 },
                 "windowSize": 200,
-                "windowDelta": 10
+                "windowDelta": 20
               }
             ]
           }
