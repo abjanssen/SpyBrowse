@@ -19,7 +19,7 @@
           "main": "#00ADB5"
         },
         "quaternary": {
-          "main": "#A2C4C9"
+          "main": "#222831"
         }
       }
     },
@@ -56,10 +56,6 @@
           "faiLocation": {
             "locationType": "UriLocation",
             "uri": "data/NV1/NV1.fna.fai"
-          },
-          "metadataLocation": {
-            "locationType": "UriLocation",
-            "uri": "/path/to/fa.metadata.yaml"
           }
         },
         "displays": [
@@ -235,10 +231,6 @@
         "faiLocation": {
           "locationType": "UriLocation",
           "uri": "./data/NV1/NV1.fna.fai"
-        },
-        "metadataLocation": {
-          "locationType": "UriLocation",
-          "uri": "/path/to/fa.metadata.yaml"
         }
       },
             "displays": [
@@ -283,15 +275,16 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.1.20)",
+    "name": "SpyBrowse (v1.1.21)",
     "margin": 0,
     "views": [
       {
         "id": "1SHhqp4_YLKIvcY_K-ig3",
+        "displayName": "NV1",
         "minimized": false,
         "type": "LinearGenomeView",
         "offsetPx": 0,
-        "bpPerPx": 3.0413625304136254,
+        "bpPerPx": 2.31033020718,
         "displayedRegions": [
           {
             "reversed": false,
@@ -311,7 +304,7 @@
               {
                 "id": "GGzHM1UdP-vzdh_1wetHP",
                 "type": "LinearReferenceSequenceDisplay",
-                "heightPreConfig": 50,
+                "heightPreConfig": 100,
                 "configuration": "NV1-ReferenceSequenceTrack-LinearReferenceSequenceDisplay",
                 "showForward": true,
                 "showReverse": true,
@@ -328,6 +321,7 @@
               {
                 "id": "4cujO83ufG7eSJPyQcnw5",
                 "type": "LinearBasicDisplay",
+                "heightPreConfig": 200,
                 "configuration": "NV1_sorted.gff-LinearBasicDisplay"
               }
             ]
@@ -341,6 +335,7 @@
               {
                 "id": "5X0Ol2Nx5T7zbuXnhxTcs",
                 "type": "LinearBasicDisplay",
+                "heightPreConfig": 100,
                 "configuration": "sgRNA_sorted.gff-LinearBasicDisplay"
               }
             ]
@@ -355,6 +350,7 @@
               {
                 "id": "j4N3EAiK2tC1KfjZwIiX-",
                 "type": "LinearGCContentTrackDisplay",
+                "heightPreConfig": 100,
                 "configuration": "gc_content_NV1-LinearGCContentTrackDisplay",
                 "selectedRendering": "",
                 "resolution": 1,
