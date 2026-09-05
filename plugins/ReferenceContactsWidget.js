@@ -105,7 +105,7 @@ export default class MyPlugin {
 
   configure(pluginManager) {
     if (pluginManager.rootModel) {
-      pluginManager.rootModel.insertMenu('Reference and contact', 10)
+      pluginManager.rootModel.insertMenu('Reference and contact', 3)
       pluginManager.rootModel.appendToMenu('Reference and contact', {
         label: 'Citing SpyBrowse',
         onClick: session => {
