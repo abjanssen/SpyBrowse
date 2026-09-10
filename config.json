@@ -30,6 +30,7 @@
   },
   "plugins": [
   { "name": "SessionNamePlugin", "umdLoc": { "uri": "plugins/SessionNamePlugin.js" } },
+  { "name": "URLNavigationPlugin", "umdLoc": { "uri": "plugins/URLNavigationPlugin.js" } },
   { "name": "SessionNamePlugin", "umdLoc": { "uri": "plugins/SessionNamePlugin.js" } },
   { "name": "MsaView", "umdLoc": { "uri": "plugins/jbrowse-plugin-msaview.umd.production.min.js" } },
   { "name": "Protein3d", "umdLoc": { "uri": "plugins/jbrowse-plugin-protein3d.umd.production.min.js" } },
@@ -277,7 +278,7 @@
     },
     "minimized": false,
     "id": "u1YyMXCY82Q-tANvWQi-U",
-    "name": "SpyBrowse (v1.1.33)",
+    "name": "SpyBrowse (v1.1.34)",
     "margin": 0,
     "views": [
       {
